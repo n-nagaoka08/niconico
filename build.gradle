@@ -14,10 +14,9 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
-//apply plugin: 'application'
 
 jar {
-	baseName = 'niconico'
+	baseName = 'operation_board'
 	version = '0.0.1-SNAPSHOT'
 }
 sourceCompatibility = 1.8
@@ -34,16 +33,14 @@ dependencies {
 	compile("org.codehaus.jackson:jackson-mapper-asl:1.9.13")
 
 	compile("org.springframework.boot:spring-boot-starter-jdbc")
-	//compile("org.springframework:spring-jdbc")
+	compile("org.postgresql:postgresql:9.4.1208.jre7")
 	compile("postgresql:postgresql:9.1-901-1.jdbc4")
 	compile("com.h2database:h2")
-	compile( "org.postgresql:postgresql:9.4.1208.jre7")
-
+ compile "org.springframework:spring-jdbc:$springVersion" //
 	compile ("org.lazyluke:log4jdbc-remix:0.2.7")
 
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
-
 
 eclipse {
 	classpath {
