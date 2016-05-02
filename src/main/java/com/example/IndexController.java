@@ -16,6 +16,7 @@ public class IndexController {
 
 		@Autowired
 
+
 		JdbcTemplate jdbc;
 	    NamedParameterJdbcTemplate jdbcTemplate; // (1)
 
