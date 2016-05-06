@@ -1,0 +1,33 @@
+spring:
+    thymeleaf:
+        cache: false
+    profiles:
+      active: dev
+
+---
+spring:
+  profiles: dev
+  datasource:
+        driverClassName: org.h2.Driver
+        url: jdbc:postgresql://localhost:5432/postgres
+        username: postgres
+        password: shadow0207
+---
+spring:
+  profiles: heroku
+  datasource:
+        driverClassName: org.postgresql.Driver
+        url:   jdbc:postgres://xdhgdqgbgiljkt:xvrvFyEWk2y7P38HR-Zgcd7Arx@ec2-50-17-249-147.compute-1.amazonaws.com:5432/d7s320ourkontg
+        user: xdhgdqgbgiljkt
+        password: c4fshNaNCTcB_x0sMOY8lx5HJx
+#        url: https://git.heroku.com/n-n-nico-calender.git
+#        url: jdbc:postgresql://localhost:5432/postgres
+
+#        username: mchilqfhaemquu
+#        password: th3ZJJznCl8g_z3HMKwqcymHND
+#        username: postgres
+#        password: shadow0207
+#      driverClassName: org.h2.Driver
+#              url: jdbc:h2:file:./db/test
+#              username: sa
+#              password:

@@ -141,6 +141,64 @@ public class IndexController {
 		  return "name";
 
 		}
+
+		@RequestMapping("/rename")
+		public String selrct(Model model, @RequestParam("userid") int userid ){
+
+			//カレンダー
+			 model.addAttribute("userid", userid);
+
+
+
+
+
+			return "rename";
+		}
+
+		@RequestMapping("/renameuser")
+		public String selrct(Model model, @RequestParam("userid") int userid,@RequestParam("namenext") String namenext ){
+
+			jdbc.update("update account set username=? where id=?  ",namenext,userid);
+
+			int number0=0;
+			int number1=1;
+			int number2=2;
+			int number3=3;
+			int number4=4;
+			model.addAttribute("number0", number0);
+			model.addAttribute("number1", number1);
+			model.addAttribute("number2", number2);
+			model.addAttribute("number3", number3);
+			model.addAttribute("number4", number4);
+			//カレンダー
+			  model.addAttribute("year", year);
+			  model.addAttribute("month", month);
+			  model.addAttribute("day1", day1);
+			  model.addAttribute("week", week_name[week]);
+
+			  model.addAttribute("day", Day);
+
+			  model.addAttribute("nowMonth", nowMonth);
+			  model.addAttribute("lastDay",lastDay);
+
+
+
+			  List<Account> account = jdbc.query(
+		                "SELECT id,username FROM account",
+		                (rs, rowNum) -> new Account( rs.getInt("id"),rs.getString("username"))
+		        );
+
+		       	  model.addAttribute("account", account);
+		       	List<Feelings> feelings = jdbc.query(
+		                "SELECT id,year,month,day,niconico FROM feelings where year=? and month=? ",
+		                (rs, rowNum) -> new Feelings(rs.getInt("id"),rs.getInt("year"),rs.getInt("month"),rs.getInt("day"),rs.getInt("niconico")), year, month
+		        );
+		        model.addAttribute("feelings", feelings);
+
+
+
+			return "name";
+		}
 		@RequestMapping("/select")
 		public String selrct(Model model, @RequestParam("clickusername") String clickusername,@RequestParam("clickyear") String clickyear,@RequestParam("clickmonth") String clickmonth,@RequestParam("clickday") String clickday ){
 

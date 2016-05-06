@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.NiconicoApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-05-06T10:25:50" hostname="GA10074" time="0.003">
+  <properties/>
+  <testcase name="contextLoads" classname="com.example.NiconicoApplicationTests" time="0.003"/>
+  <system-out><![CDATA[19:25:48.336 [Test worker] DEBUG o.s.t.c.j.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class com.example.NiconicoApplicationTests]
+19:25:48.340 [Test worker] DEBUG o.s.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+19:25:48.345 [Test worker] DEBUG o.s.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+19:25:48.352 [Test worker] DEBUG o.s.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.example.NiconicoApplicationTests] from class [org.springframework.test.context.support.DefaultTestContextBootstrapper]
+19:25:48.370 [Test worker] DEBUG o.s.t.c.s.DefaultTestContextBootstrapper - Found explicit ContextLoader class [org.springframework.boot.test.SpringApplicationContextLoader] for context configuration attributes [ContextConfigurationAttributes@32e86a83 declaringClass = 'com.example.NiconicoApplicationTests', classes = '{class com.example.Application}', locations = '{}', inheritLocations = true, initializers = '{}', inheritInitializers = true, name = [null], contextLoaderClass = 'org.springframework.boot.test.SpringApplicationContextLoader']
+19:25:48.377 [Test worker] DEBUG o.s.t.c.s.AbstractContextLoader - Did not detect default resource location for test class [com.example.NiconicoApplicationTests]: class path resource [com/example/NiconicoApplicationTests-context.xml] does not exist
+19:25:48.377 [Test worker] DEBUG o.s.t.c.s.AbstractContextLoader - Did not detect default resource location for test class [com.example.NiconicoApplicationTests]: class path resource [com/example/NiconicoApplicationTestsContext.groovy] does not exist
+19:25:48.378 [Test worker] INFO  o.s.t.c.s.AbstractContextLoader - Could not detect default resource locations for test class [com.example.NiconicoApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+19:25:48.380 [Test worker] DEBUG o.s.t.c.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.example.NiconicoApplicationTests]
+19:25:48.383 [Test worker] DEBUG o.s.t.c.s.DefaultTestContextBootstrapper - @TestExecutionListeners is not present for class [com.example.NiconicoApplicationTests]: using defaults.
+19:25:48.389 [Test worker] INFO  o.s.t.c.s.DefaultTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+19:25:48.404 [Test worker] INFO  o.s.t.c.s.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@8934559, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4ad6f1f, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4b88331, org.springframework.test.context.support.DirtiesContextTestExecutionListener@13e5b59c, org.springframework.test.context.transaction.TransactionalTestExecutionListener@14e8334, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6e74c195]
+19:25:48.407 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.example.NiconicoApplicationTests]
+19:25:48.408 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.example.NiconicoApplicationTests]
+19:25:48.408 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.example.NiconicoApplicationTests]
+19:25:48.409 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.example.NiconicoApplicationTests]
+19:25:48.411 [Test worker] DEBUG o.s.t.c.s.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@5609d4d9 testClass = NiconicoApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@3606a063 testClass = NiconicoApplicationTests, locations = '{}', classes = '{class com.example.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.boot.test.SpringApplicationContextLoader', parent = [null]]], class annotated with @DirtiesContext [false] with mode [null].
+19:25:48.412 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.example.NiconicoApplicationTests]
+19:25:48.412 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.example.NiconicoApplicationTests]
+19:25:48.414 [Test worker] DEBUG o.s.t.c.s.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@5609d4d9 testClass = NiconicoApplicationTests, testInstance = com.example.NiconicoApplicationTests@4fec5cb7, testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@3606a063 testClass = NiconicoApplicationTests, locations = '{}', classes = '{class com.example.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.boot.test.SpringApplicationContextLoader', parent = [null]]]].
+19:25:48.471 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+19:25:48.472 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+19:25:48.482 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+19:25:48.484 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Adding [integrationTest] PropertySource with search precedence immediately lower than [systemEnvironment]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.3.3.RELEASE)
+
+2016-05-06 19:25:48.790  INFO 6384 --- [    Test worker] com.example.NiconicoApplicationTests     : Starting NiconicoApplicationTests on GA10074 with PID 6384 (C:\Users\n_nagaoka\Documents\pleiades\workspace\niconico\build\classes\test started by n_nagaoka in C:\Users\n_nagaoka\Documents\pleiades\workspace\niconico)
+2016-05-06 19:25:48.790  INFO 6384 --- [    Test worker] com.example.NiconicoApplicationTests     : The following profiles are active: dev
+2016-05-06 19:25:49.031  INFO 6384 --- [    Test worker] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@1bfb0477: startup date [Fri May 06 19:25:49 JST 2016]; root of context hierarchy
+2016-05-06 19:25:50.247  INFO 6384 --- [    Test worker] com.example.NiconicoApplicationTests     : Started NiconicoApplicationTests in 1.761 seconds (JVM running for 2.563)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

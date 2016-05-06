@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" type="text/css" th:href="@{/css/syle.css}" />
+</head>
+<body>
+<title>
+ニコニコカレンダー
+</title>
+<h1>
+ニコニコカレンダー
+</h1>
+
+<p th:text="${day}"></p>
+<form method="post" action="/account" >
+  <p>name：<input type="text" name="name"/>
+ <input type="submit" value="ユーザ追加"  /></p>
+</form>
+
+
+
+<div class="month">
+		<div class="lastmonth">
+			<form method="get" action="/previous">
+				<input type="hidden" name="previous" th:value="${year}+'/'+(${month}-1)" />
+				<input type="submit" th:value="＜" />
+			</form>
+		</div>
+		<div class="currentmonth" th:text="${year}+年+' '+${month}+月"></div>
+		<div class="nextmonth">
+			<form method="get" action="/next">
+				<input type="hidden" name="next" th:value="${year}+'/'+(${month}+1)" />
+				<input type="submit" th:value="＞" />
+			</form>
+		</div>
+	</div>
+
+<table border="1" cellspacing="0" cellpadding="4" id="table1" name="clendar">
+  <tr id="a">
+  	<th> username</th>
+    <th th:each="i : ${#numbers.sequence(1,lastDay )}" th:value="${i}"  th:text="${i} "></th>
+  </tr>
+  <tr th:each="account:${account}">
+	   <td  th:text="${account.username}" th:value="${account.id}" class="userid">
+
+
+	   </td>
+		<form method="post" action="/rename">
+	   	<input type="hidden" name="userid" th:value="${account.id}" />
+
+		<input type="submit" value="" class="linkSelectButton" />
+		</form>
+	   <td th:each="i : ${#numbers.sequence(1, lastDay)}" th:value="${i}" class="feelingsHistoryCalendar" >
+		<form method="post" action="/select">
+	   	<input type="hidden" name="clickusername" th:value="${account.id}" />
+		<input type="hidden" name="clickyear" th:value="${year}" />
+		<input type="hidden" name="clickmonth" th:value="${month}" />
+		<input type="hidden" name="clickday" th:value="${i}" />
+		<input type="submit" value="" class="linkSelectButton" />
+
+
+		   <p th:each="feelings:${feelings}" >
+
+		   		<p th:if="${year == feelings.year}">
+
+		   			<p th:if="${month == feelings.month}">
+
+		   				<p th:if="${i == feelings.day }">
+
+		   					<p th:each="account:${account}">
+
+				   				<p th:if="${ feelings.id== account.id }">
+
+
+
+								   		<p th:if="${ feelings.niconico== number0 }"><img src="../niconico/niconico.png" ></img></p>
+										<p th:if="${ feelings.niconico== number1}"><img src="../niconico/iraira.png" ></img></p>
+										<p th:if="${ feelings.niconico== number2 }"><img src="../niconico/kanashii.png" ></img></p>
+										<p th:if="${ feelings.niconico== number3 }"><img src="../niconico/nemui.png" ></img></p>
+										<p th:if="${ feelings.niconico== number4 }"><img src="../niconico/hutuu.png" ></img></p>
+
+
+
+							   	</p>
+
+							 </p>
+
+						</p>
+
+					</p>
+
+				</p>
+
+			</p>
+
+
+		</form>
+		</td>
+
+
+  </tr>
+
+</table>
+ <form method="post" action="/delete" >
+
+		<p>
+		<select name="id" >
+		<option th:each="account:${account}" th:value="${account.id}">
+		<p th:text="${account.username}"></p></option>
+		</select>
+
+
+
+  <input type="submit" value="削除"  /></p>
+</form>
+
+
+</body>
+</html>
+
+

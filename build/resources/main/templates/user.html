@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>ニコニコカレンダー</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="../css/confirmStyle.css" />
+
+
+</head>
+
+<body>
+
+<form method="post" action="/usernext" >
+<input type="hidden" name="clickusername" th:value="${clickusername}" />
+  <p>name：<input type="text" name="namenext"/>
+ <input type="submit" value="ユーザ名変更"  /></p>
+</form>
+</body>
+</html>
