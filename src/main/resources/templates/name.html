@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
-<haad>
-<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<head>
+<link rel="stylesheet" type="text/css" th:href="@{/css/syle.css}" />
 </head>
 <body>
 <title>
@@ -11,40 +11,13 @@
 <h1>
 ニコニコカレンダー
 </h1>
-<script>
-function data(){
-	win2 = window.open("http://www.yahoo.com", "yahoocom", "width=500,height=500,scrollbars=yes,resizable=yes");
-
-	//var a = document.getElemenstByClassName("naoki");
-	//console.log(a);
-	//console.log(a.value);
-		}
-
-}
-</script>
 
 <p th:text="${day}"></p>
 <form method="post" action="/account" >
   <p>name：<input type="text" name="name"/>
  <input type="submit" value="ユーザ追加"  /></p>
 </form>
- <form method="post" action="/niconico" >
 
-		<p>
-		<select name="id" >
-		<option th:each="account:${account}" th:value="${account.id}">
-		<p th:text="${account.username}"></p>
-		</option>
-		</select>
-
-		<input type="radio" name="niconico1" value="0" checked="checked"/><img src="../niconico/niconico.png" ></img>
-		<input type="radio" name="niconico1" value="1"/><img src="../niconico/iraira.png" />
-		<input type="radio" name="niconico1" value="2"/><img src="../niconico/kanashii.png" />
-		<input type="radio" name="niconico1" value="3"/><img src="../niconico/nemui.png" />
-		<input type="radio" name="niconico1" value="4"/><img src="../niconico/hutuu.png" />
-
-  <input type="submit" value="登録"  /></p>
-</form>
 
 
 <div class="month">
@@ -71,30 +44,42 @@ function data(){
   <tr th:each="account:${account}">
 	   <td  th:text="${account.username}" th:value="${account.id}" class="userid"></td>
 
-	   <th th:each="i : ${#numbers.sequence(1, lastDay)}" th:value="${i}"  onClick="data()" >
-	   <p th:each="feelings:${feelings}" >
-
-	   		<p th:if="${year == feelings.year}">
-
-	   			<p th:if="${month == feelings.month}">
-
-	   				<p th:if="${i == feelings.day }">
-
-	   					<p th:each="account:${account}">
-
-			   				<p th:if="${ feelings.id== account.id }">
+	   <td th:each="i : ${#numbers.sequence(1, lastDay)}" th:value="${i}" class="feelingsHistoryCalendar" >
+		<form method="post" action="/select">
+	   	<input type="hidden" name="clickusername" th:value="${account.id}" />
+		<input type="hidden" name="clickyear" th:value="${year}" />
+		<input type="hidden" name="clickmonth" th:value="${month}" />
+		<input type="hidden" name="clickday" th:value="${i}" />
+		<input type="submit" value="" class="linkSelectButton" />
 
 
+		   <p th:each="feelings:${feelings}" >
 
-							   		<p th:if="${ feelings.niconico== number0 }"><img src="../niconico/niconico.png" ></img></p>
-									<p th:if="${ feelings.niconico== number1}"><img src="../niconico/iraira.png" ></img></p>
-									<p th:if="${ feelings.niconico== number2 }"><img src="../niconico/kanashii.png" ></img></p>
-									<p th:if="${ feelings.niconico== number3 }"><img src="../niconico/nemui.png" ></img></p>
-									<p th:if="${ feelings.niconico== number4 }"><img src="../niconico/hutuu.png" ></img></p>
+		   		<p th:if="${year == feelings.year}">
 
-						   	</p>
+		   			<p th:if="${month == feelings.month}">
 
-						 </p>
+		   				<p th:if="${i == feelings.day }">
+
+		   					<p th:each="account:${account}">
+
+				   				<p th:if="${ feelings.id== account.id }">
+
+
+
+								   		<p th:if="${ feelings.niconico== number0 }"><img src="../niconico/niconico.png" ></img></p>
+										<p th:if="${ feelings.niconico== number1}"><img src="../niconico/iraira.png" ></img></p>
+										<p th:if="${ feelings.niconico== number2 }"><img src="../niconico/kanashii.png" ></img></p>
+										<p th:if="${ feelings.niconico== number3 }"><img src="../niconico/nemui.png" ></img></p>
+										<p th:if="${ feelings.niconico== number4 }"><img src="../niconico/hutuu.png" ></img></p>
+
+
+
+							   	</p>
+
+							 </p>
+
+						</p>
 
 					</p>
 
@@ -102,11 +87,10 @@ function data(){
 
 			</p>
 
-		</p>
 
+		</form>
+		</td>
 
-
-		</th>
 
   </tr>
 

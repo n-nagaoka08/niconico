@@ -6,8 +6,11 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class IndexController {
@@ -16,9 +19,9 @@ public class IndexController {
 
 		@Autowired
 
-
 		JdbcTemplate jdbc;
-	    NamedParameterJdbcTemplate jdbcTemplate; // (1)
+
+
 
 
 	  //カレンダー取得
@@ -138,8 +141,26 @@ public class IndexController {
 		  return "name";
 
 		}
+		@RequestMapping("/select")
+		public String selrct(Model model, @RequestParam("clickusername") String clickusername,@RequestParam("clickyear") String clickyear,@RequestParam("clickmonth") String clickmonth,@RequestParam("clickday") String clickday ){
+
+			//カレンダー
+			 model.addAttribute("clickyear", clickyear);
+			  model.addAttribute("clickmonth", clickmonth);
+			  model.addAttribute("clickday", clickday);
+
+			  model.addAttribute("lastDay",lastDay);
+
+
+			  model.addAttribute("clickusername", clickusername);
+
+
+
+
+			return "select";
+		}
 		@RequestMapping("/niconico")
-		public String send1(Model model, @RequestParam("niconico1") int niconico1,@RequestParam("id") String id,@RequestParam("id") int nicoid ){
+		public String send1(Model model, @RequestParam("niconico1") int niconico1,@RequestParam("clickusername") int clickusername,@RequestParam("clickyear") int clickyear,@RequestParam("clickmonth") int clickmonth,@RequestParam("clickday") int clickday  ){
 			int number0=0;
 			int number1=1;
 			int number2=2;
@@ -170,22 +191,22 @@ public class IndexController {
 
 	       	  model.addAttribute("account", account);
 
-	       	int id1 = Integer.parseInt(id);
+	       	//int id1 = Integer.parseInt(clickusername);
 
-	       	int count =jdbc.queryForObject("select count(*) from feelings where id=? and year=? and month=? and day=?",Integer.class,id1,year,month,day1);
+	       	int count =jdbc.queryForObject("select count(*) from feelings where id=? and year=? and month=? and day=?",Integer.class,clickusername,clickyear,clickmonth,clickday);
 
 
-
+	       		System.out.println(count);
 
 	       	  if(count == 0){
-	       		jdbc.update("INSERT INTO feelings(id,year,month,day,niconico) VALUES (?,?,?,?,?)",new Object[]{id1,year,month,day1,niconico1});
+	       		jdbc.update("INSERT INTO feelings(id,year,month,day,niconico) VALUES (?,?,?,?,?)",new Object[]{clickusername,clickyear,clickmonth,clickday,niconico1});
 
 
 	       	  }
 
 	       	  else {
 
-	       		jdbc.update("update feelings set niconico=? where id=? and year=? and month=? and day=? ", niconico1, id1,year,month,day1);
+	       		jdbc.update("update feelings set niconico=? where id=? and year=? and month=? and day=? ", niconico1, clickusername,clickyear,clickmonth,clickday);
 	       	  }
 
 	       	List<Feelings> feelings = jdbc.query(

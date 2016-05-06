@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>ニコニコカレンダー</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="../css/confirmStyle.css" />
+
+
+</head>
+
+<body>
+
+<form method="post" action="/niconico" th:object="${feelings}" id="selectFeelingsForm">
+<table class="list">
+				<tr>
+					<td class="check"><input type="radio" name="niconico1" value="0" id="radio1"  />
+					<label class="label" for="radio1">
+						<img src="../niconico/niconico.png"  />
+					</label></td>
+					<td class="check"><input type="radio" name="niconico1" value="1" id="radio2" />
+					<label class="label" for="radio2">
+						<img src="../niconico/iraira.png" />
+					</label></td>
+					<td class="check"><input type="radio" name="niconico1" value="2" id="radio3"  />
+					<label class="label" for="radio3">
+						<img src="../niconico/kanashii.png" />
+					</label></td>
+					<td class="check"><input type="radio" name="niconico1" value="3" id="radio4"  />
+					<label class="label" for="radio4">
+						<img src="../niconico/nemui.png" />
+					</label></td>
+					<td class="check"><input type="radio" name="niconico1" value="4" id="radio5"  />
+					<label class="label" for="radio5">
+						<img src="../niconico/hutuu.png" />
+					</label></td>
+					<td>
+					<input type="submit" value="登録"  />
+					</td>
+				</tr>
+
+			</table>
+			<input type="hidden" name="clickusername" th:value="${clickusername}" />
+			<input type="hidden" name="clickyear" th:value="${clickyear}" />
+			<input type="hidden" name="clickmonth" th:value="${clickmonth}" />
+			<input type="hidden" name="clickday" th:value="${clickday}" />
+
+			</form>
+
+			<input type="hidden" id="getSelectedFeelingsId" th:value="${selectedFeelingsId}" />
+</body>
+</html>
