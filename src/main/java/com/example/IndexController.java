@@ -138,7 +138,7 @@ public class IndexController {
 		        );
 		        model.addAttribute("feelings", feelings);
 
-		  return "/name.html";
+		  return "name";
 
 		}
 

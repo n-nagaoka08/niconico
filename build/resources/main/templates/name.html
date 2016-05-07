@@ -44,15 +44,15 @@
   <tr th:each="account:${account}">
 
 	   <td  th:text="${account.username}" th:value="${account.id}" class="userid">
-
+<form method="post" action="/rename">
+	   	<input type="hidden" name="userid" th:value="${account.id}" />
+		<input type="submit" value="" class="linkSelectButton" />
+		</form>
 
 
 
 	   </td>
-<form method="post" action="/">
-	   	<input type="hidden" name="userid" th:value="${account.id}" />
-		<input type="submit" value="" class="linkSelectButton" />
-		</form>
+
 
 
 	   <td th:each="i : ${#numbers.sequence(1, lastDay)}" th:value="${i}" class="feelingsHistoryCalendar" >
