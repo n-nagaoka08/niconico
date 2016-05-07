@@ -361,14 +361,14 @@ public class IndexController {
 			int count = jdbc.queryForObject(
 					"select count(*) from feelings where year=? and month=? and day=?", Integer.class, nowYear,
 					nowMonth, nowDay);
-			if (count == 1) {
-				String content = jdbc.queryForObject(
-						"select content from operation_history_tbl where year=? and month=? and day=?", String.class,
-						nowYear, nowMonth, nowDay);
-				int number = jdbc.queryForObject("select number from operation_list where content=?", Integer.class,
-						content);
-				model.addAttribute("number", number);
-			}
+//			if (count == 1) {
+//				String content = jdbc.queryForObject(
+//						"select content from operation_history_tbl where year=? and month=? and day=?", String.class,
+//						nowYear, nowMonth, nowDay);
+//				int number = jdbc.queryForObject("select number from operation_list where content=?", Integer.class,
+//						content);
+//				model.addAttribute("number", number);
+//			}
 
 			calendar.set(prevYear, prevMonth - 1, 1);
 			int lastDay = calendar.getActualMaximum(Calendar.DATE);
@@ -419,17 +419,17 @@ public class IndexController {
 			int nowYear = calendar.get(Calendar.YEAR);
 			int nowMonth = calendar.get(Calendar.MONTH) + 1;
 			int nowDay = calendar.get(Calendar.DATE);
-			int count = jdbc.queryForObject(
-					"select count(*) from feelings where year=? and  month=? and day=?", Integer.class, nowYear,
-					nowMonth, nowDay);
-			if (count == 1) {
-				String content = jdbc.queryForObject(
-						"select content from feelings where year=? and month=? and day=?", String.class,
-						nowYear, nowMonth, nowDay);
-				int number = jdbc.queryForObject("select number from feelings where content=?", Integer.class,
-						content);
-				model.addAttribute("number", number);
-			}
+//			int count = jdbc.queryForObject(
+//					"select count(*) from feelings where year=? and  month=? and day=?", Integer.class, nowYear,
+//					nowMonth, nowDay);
+//			if (count == 1) {
+//				String content = jdbc.queryForObject(
+//						"select content from feelings where year=? and month=? and day=?", String.class,
+//						nowYear, nowMonth, nowDay);
+//				int number = jdbc.queryForObject("select number from feelings where content=?", Integer.class,
+//						content);
+//				model.addAttribute("number", number);
+//			}
 
 			calendar.set(nexYear, nexMonth - 1, 1);
 			int lastDay = calendar.getActualMaximum(Calendar.DATE);
@@ -448,7 +448,7 @@ public class IndexController {
 		        model.addAttribute("feelings", feelings);
 
 
-			return "namel";
+			return "name";
 		}
 //
 
