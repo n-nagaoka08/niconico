@@ -87,7 +87,7 @@ public class IndexController {
 		        );
 		        model.addAttribute("feelings", feelings);
 
-			return"name";
+			return"name.html";
 
 		}
 		@RequestMapping("/account")
@@ -138,7 +138,7 @@ public class IndexController {
 		        );
 		        model.addAttribute("feelings", feelings);
 
-		  return "name";
+		  return "/name.html";
 
 		}
 
@@ -197,7 +197,7 @@ public class IndexController {
 
 
 
-			return "name";
+			return "/name.html";
 		}
 		@RequestMapping("/select")
 		public String selrct(Model model, @RequestParam("clickusername") String clickusername,@RequestParam("clickyear") String clickyear,@RequestParam("clickmonth") String clickmonth,@RequestParam("clickday") String clickday ){
@@ -274,7 +274,7 @@ public class IndexController {
 		        model.addAttribute("feelings", feelings);
 
 
-			return "name";
+			return "name.html";
 		}
 		@RequestMapping("/delete")
 		public String delete(Model model, @RequestParam("id") String id	) {
@@ -326,7 +326,7 @@ public class IndexController {
 
 
 
-		  return "name";
+		  return "/name.html";
 
 		}
 
@@ -388,7 +388,7 @@ public class IndexController {
 
 
 
-			return "name";
+			return "name.html";
 		}
 		@RequestMapping(value = "/next")
 		public String getNext(Model model, @RequestParam("next") String next) {
@@ -448,7 +448,7 @@ public class IndexController {
 		        model.addAttribute("feelings", feelings);
 
 
-			return "name";
+			return "/name.html";
 		}
 //
 

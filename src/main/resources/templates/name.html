@@ -47,14 +47,16 @@
 
 
 
+
 	   </td>
-<form method="post" action="/">
+<form method="post" action="/rename">
 	   	<input type="hidden" name="userid" th:value="${account.id}" />
 		<input type="submit" value="" class="linkSelectButton" />
 		</form>
 
 
 	   <td th:each="i : ${#numbers.sequence(1, lastDay)}" th:value="${i}" class="feelingsHistoryCalendar" >
+
 		<form method="post" action="/select">
 	   	<input type="hidden" name="clickusername" th:value="${account.id}" />
 		<input type="hidden" name="clickyear" th:value="${year}" />
