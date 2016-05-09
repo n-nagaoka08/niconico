@@ -76,7 +76,7 @@ public class IndexController {
 
 
 			  List<Account> account = jdbc.query(
-		                "SELECT id,username FROM account",
+		                "SELECT id,username FROM account ORDER BY account ASC",
 		                (rs, rowNum) -> new Account( rs.getInt("id"),rs.getString("username"))
 		        );
 
@@ -127,7 +127,7 @@ public class IndexController {
 
 
 			  List<Account> account = jdbc.query(
-		                "SELECT id,username FROM account",
+		                "SELECT id,username FROM account ORDER BY account ASC",
 		                (rs, rowNum) -> new Account( rs.getInt("id"),rs.getString("username"))
 		        );
 
@@ -184,7 +184,7 @@ public class IndexController {
 
 
 			  List<Account> account = jdbc.query(
-		                "SELECT id,username FROM account",
+		                "SELECT id,username FROM account ORDER BY account ASC",
 		                (rs, rowNum) -> new Account( rs.getInt("id"),rs.getString("username"))
 		        );
 
@@ -244,7 +244,7 @@ public class IndexController {
 
 
 			List<Account> account = jdbc.query(
-	                "SELECT id,username FROM account",
+	                "SELECT id,username FROM account ORDER BY account ASC",
 	                (rs, rowNum) -> new Account( rs.getInt("id"),rs.getString("username"))
 	        );
 
@@ -306,7 +306,7 @@ public class IndexController {
 	        jdbc.update("DELETE  FROM account where id=?",  id1);
 	        jdbc.update("DELETE  FROM feelings where id=?",  id1);
 	        List<Account> account = jdbc.query(
-	                "SELECT id,username FROM account",
+	                "SELECT id,username FROM account ORDER BY account ASC",
 	                (rs, rowNum) -> new Account( rs.getInt("id"),rs.getString("username"))
 	        );
 
@@ -376,7 +376,7 @@ public class IndexController {
 			model.addAttribute("lastDay", lastDay);
 
 			 List<Account> account = jdbc.query(
-		                "SELECT id,username FROM account",
+		                "SELECT id,username FROM account ORDER BY account ASC",
 		                (rs, rowNum) -> new Account( rs.getInt("id"),rs.getString("username"))
 		        );
 
@@ -437,7 +437,7 @@ public class IndexController {
 			model.addAttribute("lastDay", lastDay);
 
 			 List<Account> account = jdbc.query(
-		                "SELECT id,username FROM account",
+		                "SELECT id,username FROM account ORDER BY account ASC",
 		                (rs, rowNum) -> new Account( rs.getInt("id"),rs.getString("username"))
 		        );
 

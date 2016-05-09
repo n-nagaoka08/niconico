@@ -11,7 +11,10 @@
 
 <body>
 <h1 th:text="${clickusername1}" align="center">さんのページ</h1>
-<p>にこにこ登録</p>
+
+<spam th:text="${clickday}"></spam>
+<spam >日</spam>
+
 <div>
 <form method="post" action="/niconico" th:object="${feelings}" id="selectFeelingsForm">
 
@@ -51,6 +54,8 @@
 
 			</form>
 			</div>
+
+
 			<div align="center">
 			<p>UserName変更</p>
 			<form method="post" action="/renameuser" >
