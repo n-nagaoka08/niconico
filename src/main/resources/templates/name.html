@@ -43,10 +43,11 @@
   </tr>
   <tr th:each="account:${account}">
 
-	   <td  th:text="${account.username}" th:value="${account.id}" class="userid">
+	   <td  >
 
 		<form method="post" action="/rename">
-	   	<input type="hidden" name="userid" th:value="${account.id}" />
+	   	<input type="hidden" name="clickusername" th:value="${account.id}" />
+	   	<input  name="clickusername1" th:value="${account.username}" />
 		<input type="submit" value="" class="linkSelectButton" />
 		</form>
 

@@ -145,11 +145,10 @@ public class IndexController {
 		}
 
 		@RequestMapping("/rename")
-		public String selrct(Model model, @RequestParam("userid") int userid ){
+		public String selrct(Model model, @RequestParam("clickusername1") String clickusername1, @RequestParam("clickusername") String clickusername ){
 
-			//カレンダー
-			 model.addAttribute("userid", userid);
-
+			model.addAttribute("clickusername", clickusername);
+			  model.addAttribute("clickusername1", clickusername1);
 
 
 
