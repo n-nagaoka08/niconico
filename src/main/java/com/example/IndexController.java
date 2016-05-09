@@ -104,8 +104,10 @@ public class IndexController {
 			model.addAttribute("number2", number2);
 			model.addAttribute("number3", number3);
 			model.addAttribute("number4", number4);
-			  int r =0;
-			  r = (int)(Math.random() * 10000) + 1;
+
+			int count =jdbc.queryForObject("select count(*) from account",Integer.class);
+			  int r =count+1;
+			 // r = (int)(Math.random() * 10000) + 1;
 
 
 			  //ユーザデータベース処理
