@@ -200,7 +200,7 @@ public class IndexController {
 			return "name";
 		}
 		@RequestMapping("/select")
-		public String selrct(Model model, @RequestParam("clickusername") String clickusername,@RequestParam("clickyear") String clickyear,@RequestParam("clickmonth") String clickmonth,@RequestParam("clickday") String clickday ){
+		public String selrct(Model model,@RequestParam("clickusername1") String clickusername1, @RequestParam("clickusername") String clickusername,@RequestParam("clickyear") String clickyear,@RequestParam("clickmonth") String clickmonth,@RequestParam("clickday") String clickday ){
 
 			//カレンダー
 			 model.addAttribute("clickyear", clickyear);
@@ -211,6 +211,7 @@ public class IndexController {
 
 
 			  model.addAttribute("clickusername", clickusername);
+			  model.addAttribute("clickusername1", clickusername1);
 
 
 

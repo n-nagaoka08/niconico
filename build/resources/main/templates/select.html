@@ -10,8 +10,11 @@
 </head>
 
 <body>
-
+<h1 th:text="${clickusername1}" align="center">さんのページ</h1>
+<p>にこにこ登録</p>
+<div>
 <form method="post" action="/niconico" th:object="${feelings}" id="selectFeelingsForm">
+
 <table class="list">
 				<tr>
 					<td class="check"><input type="radio" name="niconico1" value="0" id="radio1"  />
@@ -40,13 +43,21 @@
 				</tr>
 
 			</table>
+
 			<input type="hidden" name="clickusername" th:value="${clickusername}" />
 			<input type="hidden" name="clickyear" th:value="${clickyear}" />
 			<input type="hidden" name="clickmonth" th:value="${clickmonth}" />
 			<input type="hidden" name="clickday" th:value="${clickday}" />
 
 			</form>
-
-			<input type="hidden" id="getSelectedFeelingsId" th:value="${selectedFeelingsId}" />
+			</div>
+			<div align="center">
+			<p>UserName変更</p>
+			<form method="post" action="/renameuser" >
+			<input type="hidden" name="userid" th:value="${clickusername}" />
+			  <p>name：<input type="text" name="namenext"/>
+			 <input type="submit" value="ユーザ名変更"  /></p>
+			</form>
+			</div>
 </body>
 </html>

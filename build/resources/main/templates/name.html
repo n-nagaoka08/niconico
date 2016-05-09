@@ -44,7 +44,8 @@
   <tr th:each="account:${account}">
 
 	   <td  th:text="${account.username}" th:value="${account.id}" class="userid">
-<form method="post" action="/rename">
+
+		<form method="post" action="/rename">
 	   	<input type="hidden" name="userid" th:value="${account.id}" />
 		<input type="submit" value="" class="linkSelectButton" />
 		</form>
@@ -59,6 +60,7 @@
 
 		<form method="post" action="/select">
 	   	<input type="hidden" name="clickusername" th:value="${account.id}" />
+	   	<input type="hidden" name="clickusername1" th:value="${account.username}" />
 		<input type="hidden" name="clickyear" th:value="${year}" />
 		<input type="hidden" name="clickmonth" th:value="${month}" />
 		<input type="hidden" name="clickday" th:value="${i}" />
