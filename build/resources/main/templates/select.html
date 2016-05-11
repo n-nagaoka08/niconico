@@ -4,7 +4,7 @@
 <head>
 <title>ニコニコカレンダー</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" type="text/css" href="../css/confirmStyle.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
 
 
 </head>
@@ -15,7 +15,7 @@
 <spam th:text="${clickday}"></spam>
 <spam >日</spam>
 
-<div>
+<div class='alpha'>
 <form method="post" action="/niconico" th:object="${feelings}" id="selectFeelingsForm">
 
 <table class="list">
@@ -56,13 +56,6 @@
 			</div>
 
 
-			<div align="center">
-			<p>UserName変更</p>
-			<form method="post" action="/renameuser" >
-			<input type="hidden" name="userid" th:value="${clickusername}" />
-			  <p>name：<input type="text" name="namenext"/>
-			 <input type="submit" value="ユーザ名変更"  /></p>
-			</form>
-			</div>
+
 </body>
 </html>
