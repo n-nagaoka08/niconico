@@ -48,7 +48,7 @@ public class IndexController {
 
 
 
-		@RequestMapping("/")
+		@RequestMapping(value = "/")
 
 
 		public String index(Model model) {
@@ -90,7 +90,7 @@ public class IndexController {
 			return"name";
 
 		}
-		@RequestMapping("/account")
+		@RequestMapping(value ="/account")
 		public String send(Model model, @RequestParam("name") String name	) {
 
 
@@ -144,7 +144,7 @@ public class IndexController {
 
 		}
 
-		@RequestMapping("/rename")
+		@RequestMapping(value ="/rename")
 		public String selrct(Model model, @RequestParam("clickusername1") String clickusername1, @RequestParam("clickusername") String clickusername ){
 
 			model.addAttribute("clickusername", clickusername);
@@ -200,7 +200,7 @@ public class IndexController {
 
 			return "name";
 		}
-		@RequestMapping("/select")
+		@RequestMapping(value ="/select")
 		public String selrct(Model model,@RequestParam("clickusername1") String clickusername1, @RequestParam("clickusername") String clickusername,@RequestParam("clickyear") String clickyear,@RequestParam("clickmonth") String clickmonth,@RequestParam("clickday") String clickday ){
 
 			//カレンダー
@@ -219,7 +219,7 @@ public class IndexController {
 
 			return "select";
 		}
-		@RequestMapping("/niconico")
+		@RequestMapping(value ="/niconico")
 		public String send1(Model model, @RequestParam("niconico1") int niconico1,@RequestParam("clickusername") int clickusername,@RequestParam("clickyear") int clickyear,@RequestParam("clickmonth") int clickmonth,@RequestParam("clickday") int clickday  ){
 			int number0=0;
 			int number1=1;
@@ -278,7 +278,7 @@ public class IndexController {
 
 			return "name";
 		}
-		@RequestMapping("/delete")
+		@RequestMapping(value ="/delete")
 		public String delete(Model model, @RequestParam("id") String id	) {
 			int number0=0;
 			int number1=1;
