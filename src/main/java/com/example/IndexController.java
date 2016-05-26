@@ -48,7 +48,7 @@ public class IndexController {
 
 
 
-		@RequestMapping(value = "/")
+		@RequestMapping("/")
 
 
 		public String index(Model model) {
@@ -87,10 +87,10 @@ public class IndexController {
 		        );
 		        model.addAttribute("feelings", feelings);
 
-			return"/name";
+			return"name";
 
 		}
-		@RequestMapping(value ="/account")
+		@RequestMapping("/account")
 		public String send(Model model, @RequestParam("name") String name	) {
 
 
@@ -144,7 +144,7 @@ public class IndexController {
 
 		}
 
-		@RequestMapping(value ="/rename")
+		@RequestMapping("/rename")
 		public String selrct(Model model, @RequestParam("clickusername1") String clickusername1, @RequestParam("clickusername") String clickusername ){
 
 			model.addAttribute("clickusername", clickusername);
@@ -198,10 +198,9 @@ public class IndexController {
 
 
 
-
-			return "redirect:/";
+			return "name";
 		}
-		@RequestMapping(value ="/select")
+		@RequestMapping("/select")
 		public String selrct(Model model,@RequestParam("clickusername1") String clickusername1, @RequestParam("clickusername") String clickusername,@RequestParam("clickyear") String clickyear,@RequestParam("clickmonth") String clickmonth,@RequestParam("clickday") String clickday ){
 
 			//カレンダー
@@ -218,9 +217,9 @@ public class IndexController {
 
 
 
-			return "/select";
+			return "select";
 		}
-		@RequestMapping(value ="/niconico")
+		@RequestMapping("/niconico")
 		public String send1(Model model, @RequestParam("niconico1") int niconico1,@RequestParam("clickusername") int clickusername,@RequestParam("clickyear") int clickyear,@RequestParam("clickmonth") int clickmonth,@RequestParam("clickday") int clickday  ){
 			int number0=0;
 			int number1=1;
@@ -279,7 +278,7 @@ public class IndexController {
 
 			return "redirect:/";
 		}
-		@RequestMapping(value ="/delete")
+		@RequestMapping("/delete")
 		public String delete(Model model, @RequestParam("id") String id	) {
 			int number0=0;
 			int number1=1;
@@ -391,7 +390,7 @@ public class IndexController {
 
 
 
-			return "redirect:/";
+			return "name";
 		}
 		@RequestMapping(value = "/next")
 		public String getNext(Model model, @RequestParam("next") String next) {
@@ -451,7 +450,7 @@ public class IndexController {
 		        model.addAttribute("feelings", feelings);
 
 
-			return "redirect:/";
+			return "name";
 		}
 //
 
